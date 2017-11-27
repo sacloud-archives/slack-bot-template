@@ -1,0 +1,14 @@
+#=================================================
+# Please rename this file to ".env"
+#=================================================
+
+# xoxb-...
+BOT_TOKEN=
+
+VERIFICATION_TOKEN=
+
+# U...
+BOT_ID=
+
+# G... or C...
+CHANNEL_ID=
