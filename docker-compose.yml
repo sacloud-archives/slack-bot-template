@@ -1,0 +1,24 @@
+version: "3.1"
+
+services:
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /opt/certs:/var/lib/https-portal
+    environment:
+      DOMAINS: 'example.com -> http://slack-bot:3000'
+      STAGE: 'production'
+      #STAGE: 'local'
+      # FORCE_RENEW: 'true'
+    networks:
+      - "front"
+  slack-bot:
+    build: ./
+    env_file: .env
+    networks:
+      - "front"
+networks:
+  front:
