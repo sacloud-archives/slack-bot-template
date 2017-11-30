@@ -13,7 +13,9 @@ RUN  apt-get update && apt-get -y install \
 ADD . /go/src/github.com/sacloud/slack-bot-template
 WORKDIR /go/src/github.com/sacloud/slack-bot-template
 
-RUN ["make", "deps", "clean", "build"]
+RUN ["make", "deps"]
+RUN dep ensure
+RUN ["make", "clean", "build"]
 
 #----------
 

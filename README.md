@@ -26,7 +26,6 @@ Goで実装したSlack-Botをさくらのクラウド上で動かすためのテ
   - Slack側でInteractive messageのRequest URLの設定
 - `docker` + `docker-compose` + `docker-machine`
 - docker-machine さくらのクラウド ドライバ([docker-machine-sakuracloud](https://github.com/sacloud/docker-machine-sakuracloud))
-- Go開発環境(+ `dep`)
 
 ## 起動方法
 
@@ -50,11 +49,7 @@ Goで実装したSlack-Botをさくらのクラウド上で動かすためのテ
     # - CHANNEL_ID
     ###################################
    
-#### 3) 依存ライブラリのダウンロード
-
-    dep ensure
-
-#### 4) Interactive message受信用サーバのドメイン指定
+#### 3) Interactive message受信用サーバのドメイン指定
 
 docker-compose.ymlにドメインを記入
 
@@ -64,7 +59,7 @@ docker-compose.ymlにドメインを記入
     # example.comとなっている部分を任意のドメインに書き換え
     ###################################
     
-#### 5) さくらのクラウド上にサーバ作成
+#### 4) さくらのクラウド上にサーバ作成
 
 この例では`slack-bot`という名前でサーバを作成します。
 
@@ -77,8 +72,13 @@ docker-compose.ymlにドメインを記入
 
     # DOCKER_HOST環境変数などを作成したサーバに向ける
     eval $(docker-machine env slack-bot) 
+
+作成後はグローバルIPを確認し、DNSレコードの設定を行ってください。
+
+    # グローバルIPの確認
+    docker-machine ip slack-bot
     
-#### 6) 実行
+#### 5) 実行
 
     # 起動
     docker-compose up -d
