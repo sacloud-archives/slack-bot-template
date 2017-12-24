@@ -8,20 +8,20 @@
   version = "v1.3.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/nlopes/slack"
   packages = ["."]
-  revision = "c86337c0ef2486a15edd804355d9c73d2f2caed1"
-  version = "v0.1.0"
+  revision = "ccf0351050c69b08f9c48f3e876f4cd5564463e8"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["websocket"]
-  revision = "c7086645de248775cbf2373cf5ca4d2fa664b8c1"
+  revision = "d866cfc389cec985d6fda2859936a575a55a3ab6"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "fc0d8f212a0f87270f96bb734f03fbd091f3c8493450b923b2382768a642258d"
+  inputs-digest = "a6f0544984857c00d41b368840b54b3885a47a8049d2aa15cfa7b0303ffb254c"
   solver-name = "gps-cdcl"
   solver-version = 1
